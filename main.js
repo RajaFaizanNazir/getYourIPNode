@@ -13,10 +13,12 @@ const sendAPIRequest = async (ipAddress) => {
 
 app.get('/', async (req, res) => {
     const ipAddress = IP.address();
-    const ipAddressInformation = await sendAPIRequest(ipAddress);
-    res.send(ipAddressInformation)
+    // const ipAddressInformation = await sendAPIRequest(ipAddress);
+    res.send(ipAddress)
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`server is up on port ${port}`)
+  console.log(`http://localhost:${port}`)
+  console.log(`http://${IP.address()}:${port}`)
 })
